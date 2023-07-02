@@ -1,0 +1,9 @@
+:root {
+    --color-primary: purple;    
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        
+    }
+}
