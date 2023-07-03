@@ -7,7 +7,9 @@ export const metadata = {
   description: 'Veja melhor com o menor preço!",',
 }
 
-export default function RootLayout({ ...props }) {
+export default function RootLayout({ children }: {
+  children: React.ReactNode,
+}) {
   return (
     <html lang="en">
       <body>
@@ -15,7 +17,7 @@ export default function RootLayout({ ...props }) {
         <Header />
 
         <main>
-          {props.children}
+          {children}
         </main>
 
         <Nav />
