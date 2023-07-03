@@ -1,2 +1,9 @@
 @import url("./variables.css");
 @import url("./reset.css");
+
+body {
+    color: var(--color-primary);
+    background-color: var(--color-secondary-100);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
