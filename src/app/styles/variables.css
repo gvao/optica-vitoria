@@ -1,5 +1,6 @@
 :root {
     --color-primary: purple;    
+    --color-secondary-100: #cdcdcd;    
 }
 
 @media (prefers-color-scheme: dark) {
