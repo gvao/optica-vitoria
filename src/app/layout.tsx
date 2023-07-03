@@ -1,6 +1,6 @@
-import { Container } from '@/common/container'
 import './styles/globals.css'
-import styles from "./styles/layout.module.css"
+import { Header } from './components/header'
+import { Nav } from './components/nav'
 
 export const metadata = {
   title: 'Óptica Vitória',
@@ -25,19 +25,3 @@ export default function RootLayout({ ...props }) {
   )
 }
 
-const Header = () => (
-  <header className={styles.header} >
-    <Container className={styles.headerContainer} >
-      Óptica Vitória
-    </Container>
-  </header>
-)
-
-const Nav = () => (
-  <nav className={styles.nav} >
-    <Container className={styles.navContainer}>
-      <a href="/">home</a>
-      <a href="/clients">Clientes</a>
-    </Container>
-  </nav>
-)
