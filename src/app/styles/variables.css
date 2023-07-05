@@ -1,6 +1,8 @@
 :root {
     --color-primary: purple;    
     --color-secondary-100: #cdcdcd;    
+
+    --shadow-sm: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
