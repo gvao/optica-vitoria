@@ -1,6 +1,8 @@
 import './styles/globals.css'
+
 import { Header } from './components/header'
 import { Nav } from './components/nav'
+import { Container } from '@/common/container'
 
 export const metadata = {
   title: 'Óptica Vitória',
@@ -17,7 +19,9 @@ export default function RootLayout({ children }: {
         <Header />
 
         <main>
-          {children}
+          <Container>
+            {children}
+          </Container>
         </main>
 
         <Nav />
