@@ -6,9 +6,8 @@
 
     padding: 16px 8px;
 
-
     border-radius: var(--radius-sm);
     border: 0;
 
-
+    cursor: pointer;
 }
