@@ -1,4 +1,4 @@
-import { HomeIcon, ListBulletIcon } from '@heroicons/react/24/solid';
+import { ClipboardDocumentListIcon, HomeIcon, ListBulletIcon } from '@heroicons/react/24/solid';
 
 import styles from '../styles/layout.module.css';
 import { Container } from "@/common/container";
@@ -12,6 +12,9 @@ export const Nav = () => (
             <a href="/clients">
                 <ListBulletIcon title='Clientes' className={styles.icon}/>
             </a>
+            {/* <a href="/pedidos">
+                <ClipboardDocumentListIcon title='Pedidos' className={styles.icon}/>
+            </a> */}
         </Container>
     </nav>
 );
