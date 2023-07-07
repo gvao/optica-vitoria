@@ -21,12 +21,19 @@ export const FormClient = () => {
         resetInputs()
     }
 
-    const onChange: ChangeEventHandler<HTMLInputElement> | undefined = ({ target: { id, value } }) => 
+    const onChange: ChangeEventHandler<HTMLInputElement> | undefined = ({ target: { id, value } }) =>
         setClient(state => ({ ...state, [id]: value }))
 
     return (
         <FormComponent.Root onSubmit={onSubmit}>
-            <FormComponent.Input name="name" id="name" state={client} onChange={onChange} />
+            <h2>Novo cliente</h2>
+            <FormComponent.Input
+                name="name"
+                id="name"
+                state={client}
+                onChange={onChange}
+                placeholder="Nome do cliente"
+            />
 
             <FormComponent.Button type="submit" >Enviar</FormComponent.Button>
         </FormComponent.Root>
