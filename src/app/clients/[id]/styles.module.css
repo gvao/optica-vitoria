@@ -1,0 +1,43 @@
+
+.ball {
+    content: "";
+    
+    background-color: gray;
+
+    width: 15px;
+    height: 15px;
+    
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.ball[data-active="active"] {
+    background-color: green;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-sm);
+}
+
+.tabs_link {
+    color: var(--color-primary);
+
+    text-align: center;
+    padding: var(--pad-sm);
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--color-primary);
+}
+
+.tabs_selected {
+    background-color: var(--color-primary);
+    color: var(--color-secondary-100);
+}
+
+.actions {
+    display: flex;
+    
+}
