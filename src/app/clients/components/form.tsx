@@ -6,7 +6,8 @@ import { Client } from "@/store/types"
 import { ChangeEventHandler, FormEventHandler, useState } from "react"
 
 const initialValue: Client = {
-    name: ''
+    name: '',
+    active: false,
 }
 
 export const FormClient = () => {
