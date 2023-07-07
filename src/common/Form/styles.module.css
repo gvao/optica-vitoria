@@ -15,6 +15,8 @@
     font-size: 20px;
     box-shadow: var(--shadow-sm);
     outline: none;
+
+    flex-grow: 1;
 }
 
 .button {

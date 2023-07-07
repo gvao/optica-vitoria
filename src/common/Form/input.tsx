@@ -3,12 +3,14 @@ import { InputProps } from "./types"
 
 export const Input = ({ state, id, ...props }: InputProps) => {
 
+    const value = typeof state === 'string' ? state :  state[id]
+
     return (
         <input
             className={styles.input}
             type="text"
             id={id}
-            value={state[id] || ""}
+            value={value || ""}
             {...props}
         />
     )

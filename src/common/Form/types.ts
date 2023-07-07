@@ -10,7 +10,7 @@ export type RootProps = PropsType & FormHTMLAttributes<HTMLFormElement>
 export type ButtonProps = PropsType & ButtonHTMLAttributes<HTMLButtonElement>
 
 export type InputProps = {
-    state: {
+    state: string | {
         [id: string]: any,
     },
     id: string,
