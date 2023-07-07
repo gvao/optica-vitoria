@@ -7,6 +7,7 @@ export type Client = {
     id?: string;
     fullName?: string;
     name: string;
+    active: boolean;
 }
 
 export type ClientsStoreProps = {

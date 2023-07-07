@@ -15,9 +15,25 @@ const clientsStore = create(
     )
 )
 
-const { getState, setState } = clientsStore
+const { setState } = clientsStore
 
 export const useClientsStore = (fn = (state: ClientsStoreProps) => state) => clientsStore(fn)
+
+export const useClientId = (id: string) => {
+    const { clients } = useClientsStore()
+    const client = clients.find(client => client.id === id)!
+
+    function changeStatus() {
+        client.active = !client.active
+
+        setState({ clients })
+    }
+
+    return {
+        client,
+        changeStatus,
+    }
+}
 
 export const addClientInStore = (newClient: Client): void => {
     const id = generateToken()
@@ -30,4 +46,8 @@ export const addClientInStore = (newClient: Client): void => {
     }))
 }
 
-export const setSearch = (newValue: string) => setState(state => ({ ...state,  search: newValue }))
+export const removeClientInStore = (clientId: string) =>
+    setState(({ clients }) => ({ clients: clients.filter(client => client.id !== clientId) }))
+
+export const setSearch = (newValue: string) =>
+    setState(state => ({ ...state, search: newValue }))
