@@ -1,21 +1,40 @@
-'use client'
-import { useClientsStore } from "@/store/clients"
+
+import { Header } from "./components/header"
+import { Tabs } from "./components/tabs"
+import { SectionRemoveClient } from "./components/remove-client"
+
+import { ReactNode } from "react"
+
 
 type PageProps = {
     params: {
         id: string,
+    },
+    searchParams: {
+        tab: string,
     }
 }
 
-export default function DetailsClient({ params, ...props }: PageProps) {
-    const { clients } = useClientsStore()
-    
-    const client = clients.find(client => client.id === params.id)!
+type TabsProps = {
+    [key: string]: ReactNode,
+}
+
+export default function DetailsClient({ params, searchParams }: PageProps) {
+
+    const tabs: TabsProps = {
+        delete: <SectionRemoveClient id={params.id} />,
+        pedidos: null,
+    }
 
     return (
         <>
-            <h1>{client.name}</h1>
-            <p>id: {client.id}</p>
+            <Header id={params.id} />
+
+            <Tabs tab={searchParams.tab} />
+
+            {tabs[searchParams?.tab]}
+
         </>
     )
 }
+
