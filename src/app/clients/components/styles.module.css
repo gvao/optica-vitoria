@@ -22,3 +22,14 @@
     padding: 8px 16px;
     border-radius: 8px;
 }
+
+.searchArea {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+
+.searchArea button {
+    font-size: 35px;
+    width: 16%;
+}

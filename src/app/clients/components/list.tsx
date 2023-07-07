@@ -1,25 +1,50 @@
 'use client'
+
+import { Input } from '@/common/Form/input';
 import styles from './styles.module.css'
 
-import { useClientsStore } from "@/store/clients"
+import { setSearch, useClientsStore } from "@/store/clients"
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import { Link } from '@/common/link';
+import { Button } from '@/common/button';
 
 export const ListClients = () => {
 
-    const { clients } = useClientsStore()
+    const { clients, search } = useClientsStore()
 
     return <>
         <ul className={styles.card_wrapper} >
-            {clients.map(client => (
-                <li key={client.id} className={`${styles.item} ${styles.card_item}`}>
-                    <div className="info">
-                        <h2>{client.name}</h2>
-                        <p>{client.id}</p>
-                    </div>
 
-                    <ChevronRightIcon className={styles.icon} />
-                </li>
-            ))}
+            <div className={styles.searchArea} >
+                <Input
+                    id='search'
+                    onChange={({ target }) => setSearch(target.value)}
+                    placeholder='Pesquise...'
+                    state={search}
+                    autoFocus
+                />
+
+                <Button>
+                    <Link href={`?popup=add`}>
+                        +
+                    </Link>
+                </Button>
+            </div>
+
+            {clients
+                .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
+                .map(client => (
+                    <li key={client.id} className={`${styles.item} ${styles.card_item}`}>
+                        <Link href={`/clients/${client.id}`} className={styles.item} >
+                            <div className="info">
+                                <h2>{client.name}</h2>
+                                <p>{client.id}</p>
+                            </div>
+
+                            <ChevronRightIcon className={styles.icon} />
+                        </Link>
+                    </li>
+                ))}
 
         </ul>
     </>
