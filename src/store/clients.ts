@@ -9,6 +9,7 @@ const clientsStore = create(
         (set, get) => ({
             clients: [],
             pedidos: [],
+            search: '',
         }),
         { name: 'optica-vitoria' }
     )
@@ -28,3 +29,5 @@ export const addClientInStore = (newClient: Client): void => {
         }]
     }))
 }
+
+export const setSearch = (newValue: string) => setState(state => ({ ...state,  search: newValue }))

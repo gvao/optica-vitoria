@@ -12,4 +12,5 @@ export type Client = {
 export type ClientsStoreProps = {
     clients: Client[],
     pedidos: Pedido[],
+    search: string,
 }
