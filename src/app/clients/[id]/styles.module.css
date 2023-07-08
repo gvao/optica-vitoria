@@ -38,6 +38,8 @@
 }
 
 .actions {
+    max-width: 90%;
     display: flex;
-    
+    gap: 4px;   
+    margin: 4px auto;
 }

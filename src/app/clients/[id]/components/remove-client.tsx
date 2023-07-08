@@ -1,26 +1,24 @@
 'use client'
+import { MouseEventHandler } from "react"
+import { useRouter } from "next/navigation"
 
 import { Button } from "@/common/button"
 import { Container } from "@/common/container"
 import { removeClientInStore } from "@/store/clients"
-import { MouseEventHandler } from "react"
 
 import styles from "../styles.module.css"
-import { useRouter } from "next/navigation"
 
 
 export const SectionRemoveClient = ({ id }: { id: string }) => {
 
-    const { back } = useRouter()
+    const { push, back } = useRouter()
 
-    const cancelDeleteClient = () =>  {
-        console.log('cancel')
-        back()
-    }
+    const cancelDeleteClient = () =>  back()
 
     const deleteClient: MouseEventHandler<HTMLButtonElement> = () => {
-        // removeClientInStore(id)
-        console.log('delete')
+        removeClientInStore(id)
+        push('/clients')
+        console.log(`delete client ${id}`)
     }
 
     return (

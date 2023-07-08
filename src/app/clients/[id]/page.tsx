@@ -5,7 +5,6 @@ import { SectionRemoveClient } from "./components/remove-client"
 
 import { ReactNode } from "react"
 
-
 type PageProps = {
     params: {
         id: string,
