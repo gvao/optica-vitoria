@@ -15,6 +15,10 @@ const clientsStore = create(
     )
 )
 
+clientsStore.subscribe((state, prev) => {
+    console.log(`Prev state: `, prev, `\n State: `, state)
+})
+
 const { setState } = clientsStore
 
 export const useClientsStore = (fn = (state: ClientsStoreProps) => state) => clientsStore(fn)
