@@ -28,4 +28,4 @@ export const Header = ({ id }: HeaderProps) => {
 
 
 const BallIcon = ({ active = false }: { active?: boolean }) =>
-    <div className={`${styles.ball}`} data-active={active ? "active" : ""} />
+    <i className={`${styles.ball}`} data-active={active ? "active" : ""} />
