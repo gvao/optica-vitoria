@@ -13,7 +13,7 @@ export const ListClients = () => {
     const { clients, search } = useClientsStore()
 
     return <>
-        <ul className={styles.card_wrapper} >
+        <div className={styles.card_wrapper} >
 
             <div className={styles.searchArea} >
                 <Input
@@ -31,21 +31,23 @@ export const ListClients = () => {
                 </Button>
             </div>
 
-            {clients
-                .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
-                .map(client => (
-                    <li key={client.id} className={`${styles.item} ${styles.card_item}`}>
-                        <Link href={`/clients/${client.id}`} className={styles.item} >
-                            <div className="info">
-                                <h2>{client.name}</h2>
-                                <p>{client.id}</p>
-                            </div>
+            <ul>
+                {clients
+                    .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
+                    .map(client => (
+                        <li key={client.id} className={`${styles.item} ${styles.card_item}`}>
+                            <Link href={`/clients/${client.id}`} className={styles.item} >
+                                <div className="info">
+                                    <h2>{client.name}</h2>
+                                    <p>{client.id}</p>
+                                </div>
 
-                            <ChevronRightIcon className={styles.icon} />
-                        </Link>
-                    </li>
-                ))}
+                                <ChevronRightIcon className={styles.icon} />
+                            </Link>
+                        </li>
+                    ))}
+            </ul>
 
-        </ul>
+        </div>
     </>
 }
