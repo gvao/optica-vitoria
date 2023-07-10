@@ -10,15 +10,13 @@ import styles from "../styles.module.css"
 
 
 export const SectionRemoveClient = ({ id }: { id: string }) => {
+    const router = useRouter()
 
-    const { push, back } = useRouter()
-
-    const cancelDeleteClient = () =>  back()
+    const cancelDeleteClient = () =>  router.back()
 
     const deleteClient: MouseEventHandler<HTMLButtonElement> = () => {
+        router.push('/clients')
         removeClientInStore(id)
-        push('/clients')
-        console.log(`delete client ${id}`)
     }
 
     return (

@@ -19,7 +19,7 @@ type TabsProps = {
 }
 
 export default function DetailsClient({ params, searchParams }: PageProps) {
-
+    
     const tabs: TabsProps = {
         delete: <SectionRemoveClient id={params.id} />,
         pedidos: null,
@@ -27,7 +27,7 @@ export default function DetailsClient({ params, searchParams }: PageProps) {
 
     return (
         <>
-            <Header id={params.id} />
+            {/* <Header id={params.id} /> */}
 
             <Tabs tab={searchParams.tab} />
 
