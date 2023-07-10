@@ -5,7 +5,7 @@ import { SectionRemoveClient } from "./components/remove-client"
 import { PageProps, TabsProps } from './types'
 
 export default function DetailsClient({ params, searchParams }: PageProps) {
-    
+
     const tabs: TabsProps = {
         delete: <SectionRemoveClient id={params.id} />,
         pedidos: null,
