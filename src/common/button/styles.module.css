@@ -19,6 +19,6 @@
     color: var(--color-secondary-100);
 }
 
-.button[data-upperCase = "true"] {
+.button[data-uppercase = "true"] {
     text-transform: uppercase;
 }

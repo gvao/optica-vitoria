@@ -1,16 +1,16 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes } from "react";
 import styles from './styles.module.css'
 
 type ButtonProps = {
-    style?: 'default' | 'border' | 'minimal',
+    fill?: 'default' | 'border' | 'minimal',
     upperCase?: boolean,
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button = ({ className, style="default", upperCase = false, children, ...props }: ButtonProps) => (
+export const Button = ({ className, fill="default", upperCase = false, children, ...props }: ButtonProps) => (
     <button
         className={`${styles.button} ${className}`}
-        data-fill={style}
-        data-upperCase={upperCase}
+        data-fill={fill}
+        data-uppercase={upperCase}
         {...props}
     >
         {children}
