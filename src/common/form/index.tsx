@@ -1,5 +1,5 @@
 import { Input } from "./input"
-import { Button } from "./button"
+import { Button } from "../button"
 import { Root } from "./root"
 
 export const FormComponent = {
