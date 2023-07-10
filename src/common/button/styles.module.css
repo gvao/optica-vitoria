@@ -1,13 +1,24 @@
 .button {
-    background-color: var(--color-primary);
-    color: var(--color-secondary-100);
-    
+    color: var(--color-primary);
+    background-color: transparent;
+
     width: 100%;
 
     padding: 16px 8px;
 
-    border-radius: var(--radius-sm);
-    border: 0;
+    border: none;
+    border-radius: var(--radius-md);
+}
 
-    cursor: pointer;
+.button[data-fill="border"] {
+    border: 2px solid var(--color-primary);
+}
+
+.button[data-fill="default"] {
+    background-color: var(--color-primary);
+    color: var(--color-secondary-100);
+}
+
+.button[data-upperCase = "true"] {
+    text-transform: uppercase;
 }
