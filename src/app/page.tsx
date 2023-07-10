@@ -1,11 +1,15 @@
+import { Container } from '@/common/container'
 import styles from './page.module.css'
 
 export default function Home() {
 
   return (
     <main>
-      <h1>Home</h1>
-      
+      <Container>
+        <h1>Home</h1>
+
+
+      </Container>
     </main>
   )
 }

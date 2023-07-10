@@ -1,6 +1,7 @@
 import { Popup } from "@/common/popup";
 import { FormClient } from "./components/form";
 import { ListClients } from "./components/list";
+import { Container } from "@/common/container";
 
 type ClientsPageProps = {
     searchParams: {
@@ -11,7 +12,7 @@ type ClientsPageProps = {
 export default function ClientsPage({ searchParams }: ClientsPageProps) {
 
     return (
-        <>
+        <Container>
             <h1>Clients</h1>
 
             {searchParams?.popup === 'add' && (
@@ -22,6 +23,6 @@ export default function ClientsPage({ searchParams }: ClientsPageProps) {
             )}
 
             <ListClients />
-        </>
+        </Container>
     )
 }
