@@ -1,6 +1,4 @@
 'use client'
-
-import { Input } from '@/common/form/input';
 import styles from './styles.module.css'
 
 import { setSearch, useClientsStore } from "@/store/clients"
@@ -8,6 +6,7 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { Link } from '@/common/link';
 import { Button } from '@/common/button';
 import { Client } from '@/store/types';
+import { FormComponent } from '@/common/form';
 
 export const ListClients = () => {
 
@@ -17,7 +16,7 @@ export const ListClients = () => {
         <div className={styles.card_wrapper} >
 
             <div className={styles.searchArea} >
-                <Input
+                <FormComponent.Input
                     id='search'
                     onChange={({ target }) => setSearch(target.value)}
                     placeholder='Pesquise...'
@@ -25,11 +24,11 @@ export const ListClients = () => {
                     autoFocus
                 />
 
-                <Button>
-                    <Link href={`?popup=add`}>
-                        +
-                    </Link>
-                </Button>
+                    <Button>
+                        <Link href={`?popup=add`}>
+                            +
+                        </Link>
+                    </Button>
             </div>
 
             <List
