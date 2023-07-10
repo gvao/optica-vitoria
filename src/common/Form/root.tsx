@@ -1,4 +1,4 @@
-import { RootProps } from "./types";
+import { RootProps } from "./type";
 import styles from "./styles.module.css"
 
 export const Root = ({ children, ...props }: RootProps) => (

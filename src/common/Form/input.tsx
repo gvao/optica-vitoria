@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import { InputProps } from "./types"
+import { InputProps } from "./type"
 
 export const Input = ({ state, id, ...props }: InputProps) => {
 
