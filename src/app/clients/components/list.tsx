@@ -1,12 +1,13 @@
 'use client'
 
-import { Input } from '@/common/Form/input';
+import { Input } from '@/common/form/input';
 import styles from './styles.module.css'
 
 import { setSearch, useClientsStore } from "@/store/clients"
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import { Link } from '@/common/link';
 import { Button } from '@/common/button';
+import { Client } from '@/store/types';
 
 export const ListClients = () => {
 
@@ -31,23 +32,34 @@ export const ListClients = () => {
                 </Button>
             </div>
 
-            <ul>
-                {clients
-                    .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
-                    .map(client => (
-                        <li key={client.id} className={`${styles.item} ${styles.card_item}`}>
-                            <Link href={`/clients/${client.id}`} className={styles.item} >
-                                <div className="info">
-                                    <h2>{client.name}</h2>
-                                    <p>{client.id}</p>
-                                </div>
-
-                                <ChevronRightIcon className={styles.icon} />
-                            </Link>
-                        </li>
-                    ))}
-            </ul>
+            <List
+                data={
+                    clients
+                        .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
+                }
+            />
 
         </div>
     </>
 }
+
+const List = ({ data }: { data: Client[] }) => {
+    return (
+        <ul className={styles.list} >
+            {data
+                .map(client => (
+                    <li key={client?.id} className={`${styles.item} ${styles.card_item}`}>
+                        <Link href={`/clients/${client?.id}`} className={styles.item} >
+                            <div className="info">
+                                <h2>{client?.name}</h2>
+                                <p>{client?.id}</p>
+                            </div>
+
+                            <ChevronRightIcon className={styles.icon} />
+                        </Link>
+                    </li>
+                ))}
+        </ul>
+    )
+}
+

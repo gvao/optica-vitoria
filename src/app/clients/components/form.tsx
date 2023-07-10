@@ -1,5 +1,5 @@
 'use client'
-import { FormComponent } from "@/common/Form"
+import { FormComponent } from "@/common/form"
 import { addClientInStore } from "@/store/clients"
 import { Client } from "@/store/types"
 

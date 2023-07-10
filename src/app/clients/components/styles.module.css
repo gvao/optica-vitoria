@@ -33,3 +33,10 @@
     font-size: 35px;
     width: 16%;
 }
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 0;
+}
