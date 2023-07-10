@@ -4,7 +4,7 @@ import { Bars2Icon } from "@heroicons/react/24/solid";
 
 export const Header = () => (
     <header className={styles.header} >
-        <Container className={styles.headerContainer} >
+        <Container direction="row" className={styles.headerContainer} >
             <a href="/">
                 Óptica Vitória
             </a>

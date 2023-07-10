@@ -1,5 +1,25 @@
 .container {
+    width: 100%;
     max-width: 760px;
+
     margin: 0 auto;
     padding: 12px 16px;
+    
+    display: flex;   
+    flex-direction: column;
+    gap: 4px;
+}
+
+.container[data-direction="row"] {
+    flex-direction: row;
+}
+
+.container[data-justify="between"] {
+    justify-content: space-between;
+}
+.container[data-justify="evenly"] {
+    justify-content: space-evenly;
+}
+.container[data-justify="center"] {
+    justify-content: center;
 }
