@@ -26,7 +26,7 @@ export const SectionRemoveClient = ({ id }: { id: string }) => {
             Tem certeza que deseja prosseguir?
 
             <div className={styles.actions} >
-                <Button upperCase onClick={cancelDeleteClient} style="border" >Cancelar</Button>
+                <Button upperCase onClick={cancelDeleteClient} fill="border" >Cancelar</Button>
                 <Button upperCase onClick={deleteClient}>Deletar</Button>
             </div>
 

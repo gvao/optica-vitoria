@@ -1,10 +1,11 @@
 'use client'
+import { Container } from "@/common/container"
 import { FormComponent } from "@/common/form"
 import { addClientInStore } from "@/store/clients"
 import { Client } from "@/store/types"
 import { useRouter } from "next/navigation"
 
-import { ChangeEventHandler, FormEventHandler, useState } from "react"
+import { ChangeEventHandler, FormEventHandler, MouseEventHandler, useState } from "react"
 
 const initialValue: Client = {
     name: '',
@@ -29,6 +30,8 @@ export const FormClient = () => {
     const onChange: ChangeEventHandler<HTMLInputElement> | undefined = ({ target: { id, value } }) =>
         setClient(state => ({ ...state, [id]: value }))
 
+    const cancel: MouseEventHandler<HTMLButtonElement> = (event) => closePopup()
+
     return (
         <FormComponent.Root onSubmit={onSubmit}>
             <h2>Novo cliente</h2>
@@ -41,7 +44,15 @@ export const FormClient = () => {
                 autoFocus
             />
 
-            <FormComponent.Button type="submit" >Enviar</FormComponent.Button>
+            <Container direction="row" justify="between" >
+                <FormComponent.Button fill="border" type="button" onClick={cancel}>
+                    Cancelar
+                </FormComponent.Button>
+
+                <FormComponent.Button type="submit" >
+                    Enviar
+                </FormComponent.Button>
+            </Container>
         </FormComponent.Root>
     )
 }

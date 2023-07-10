@@ -18,7 +18,6 @@ export default function ClientsPage({ searchParams }: ClientsPageProps) {
             {searchParams?.popup === 'add' && (
                 <Popup.Root>
                     <FormClient />
-
                 </Popup.Root>
             )}
 
