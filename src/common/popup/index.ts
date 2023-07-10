@@ -1,4 +1,4 @@
-import {Root} from "./root"
+import { Root } from "./root"
 
 
 export const Popup = {
