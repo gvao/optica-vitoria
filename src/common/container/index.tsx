@@ -6,8 +6,8 @@ type ContainerProps = {
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 
-export const Container = ({ children, className }: ContainerProps) => (
-    <div className={`${styles.container} ${className}`} >
+export const Container = ({ children, className, ...props }: ContainerProps) => (
+    <div className={`${styles.container} ${className}`} {...props} >
         {children}
     </div>
 )
