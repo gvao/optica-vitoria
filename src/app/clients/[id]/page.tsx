@@ -2,6 +2,7 @@ import { Tabs } from "./components/tabs"
 import { SectionRemoveClient } from "./components/remove-client"
 import { PageProps, TabsProps } from './types'
 import { Container } from "@/common/container"
+import { Header } from "./components/header"
 
 export default function DetailsClient({ params, searchParams }: PageProps) {
 
@@ -12,6 +13,8 @@ export default function DetailsClient({ params, searchParams }: PageProps) {
 
     return (
         <Container>
+
+            <Header id={params.id} />
 
             <Tabs tab={searchParams.tab} />
 
