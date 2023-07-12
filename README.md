@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Óptica Vitória
 
-## Getting Started
+Este projeto é uma aplicação web para cadastrar os clientes de uma óptica e gerenciar os pedidos.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- React
+- Next.js v13
+- Node.js
+- TypeScript
+- Zustand
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Cadastro de clientes
+- Gerenciamento de pedidos
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deploy
 
-## Learn More
+O projeto está hospedado na plataforma Vercel e pode ser acessado através do seguinte link: [https://optica-vitoria.vercel.app/](https://optica-vitoria.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+## Contribuição
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ainda não foram definidas as etapas de contribuição para o projeto. Fique atento para atualizações futuras.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contribuidores
 
-## Deploy on Vercel
+- Yuri Galvão ([GitHub](https://github.com/gvao))
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Licença
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
+
+## Contato
+
+- E-mail: yuri.gvao@gmail.com
+- GitHub: [github.com/gvao](https://github.com/gvao)
+- LinkedIn: [linkedin.com/in/yuri-galvao](https://www.linkedin.com/in/yuri-galvao)
+
+## Agradecimentos
+
+Gostaria de agradecer a todos que contribuíram e apoiaram o desenvolvimento deste projeto.
