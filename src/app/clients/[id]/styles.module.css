@@ -20,16 +20,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--gap-sm);
+    gap: 0;
 }
 
 .tabs_link {
     color: var(--color-primary);
-
     text-align: center;
+
     padding: var(--pad-sm);
-    border-radius: var(--radius-sm);
-    border: 2px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
 }
 
 .tabs_selected {

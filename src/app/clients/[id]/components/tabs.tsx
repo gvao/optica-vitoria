@@ -12,7 +12,7 @@ export const Tabs = ({ tab }: TabsProps) => {
 
     return (
         <section >
-            <Container className={styles.tabs} >
+            <Container direction="row" className={styles.tabs} >
                 <Link href="?tab=pedidos" className={`${styles.tabs_link} ${isTabSelected('pedidos')}`} >Pedidos</Link>
                 <Link href="?tab=delete" className={`${styles.tabs_link} ${isTabSelected('delete')}`}>Delete</Link>
             </Container>
