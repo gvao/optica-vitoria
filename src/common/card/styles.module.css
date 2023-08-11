@@ -1,0 +1,14 @@
+.card_wrapper {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-secondary-100);
+
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+

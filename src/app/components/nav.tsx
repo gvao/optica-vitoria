@@ -12,9 +12,9 @@ export const Nav = () => (
             <a href="/clients">
                 <ListBulletIcon title='Clientes' className={styles.icon}/>
             </a>
-            {/* <a href="/pedidos">
+            <a href="/pedidos">
                 <ClipboardDocumentListIcon title='Pedidos' className={styles.icon}/>
-            </a> */}
+            </a>
         </Container>
     </nav>
 );

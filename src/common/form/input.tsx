@@ -3,7 +3,7 @@ import { InputProps } from "./type"
 
 export const Input = ({ state, id, ...props }: InputProps) => {
 
-    const value = typeof state === 'string' ? state :  state[id]
+    const value = typeof state === 'string' ? state : state[id]
 
     return (
         <input

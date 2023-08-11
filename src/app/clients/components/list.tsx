@@ -7,10 +7,14 @@ import { Link } from '@/common/link';
 import { Button } from '@/common/button';
 import { Client } from '@/store/types';
 import { FormComponent } from '@/common/form';
+import { Card } from '@/common/card';
 
 export const ListClients = () => {
 
     const { clients, search } = useClientsStore()
+
+    const filteredClients = clients
+        .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
 
     return <>
         <div className={styles.card_wrapper} >
@@ -24,18 +28,15 @@ export const ListClients = () => {
                     autoFocus
                 />
 
-                    <Button>
-                        <Link href={`?popup=add`}>
-                            +
-                        </Link>
-                    </Button>
+                <Button>
+                    <Link href={`?popup=add`}>
+                        +
+                    </Link>
+                </Button>
             </div>
 
             <List
-                data={
-                    clients
-                        .filter(client => client.name.toLowerCase().includes(search.toLowerCase()))
-                }
+                data={filteredClients}
             />
 
         </div>
@@ -45,20 +46,32 @@ export const ListClients = () => {
 const List = ({ data }: { data: Client[] }) => {
     return (
         <ul className={styles.list} >
-            {data
-                .map(client => (
-                    <li key={client?.id} className={`${styles.item} ${styles.card_item}`}>
-                        <Link href={`/clients/${client?.id}`} className={styles.item} >
+
+            {data.map(client => (
+
+                <li key={client?.id} className={`${styles.item}`}>
+
+                    <Card.Root>
+                        <Link href={`/clients/${client?.id}?tab=pedidos`} className={styles.item} >
                             <div className="info">
                                 <h2>{client?.name}</h2>
-                                <p>{client?.id}</p>
+                                {/* <p>{client?.id}</p> */}
                             </div>
 
-                            <ChevronRightIcon className={styles.icon} />
+                            <div
+                                className={styles.icon}
+                            >
+                                <ChevronRightIcon />
+                            </div>
+
                         </Link>
-                    </li>
-                ))}
+                    </Card.Root>
+
+                </li>
+            ))}
+
         </ul>
     )
 }
+
 
