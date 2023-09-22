@@ -1,5 +1,6 @@
 import { DetailedHTMLProps, LiHTMLAttributes, ReactNode } from "react"
 import styles from "./styles.module.css"
+import { Card } from "../card"
 
 
 interface RootProps extends DetailedHTMLProps<LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
@@ -12,6 +13,11 @@ export const Item = ({ children, ...props }: RootProps) => (
         className={styles.item}
         {...props}
     >
-        {children}
+        <Card.Root>
+
+            {children}
+
+            
+        </Card.Root>
     </li>
 )

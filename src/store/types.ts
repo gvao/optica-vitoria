@@ -1,6 +1,7 @@
-type Pedido = {
-    createdDate: string,
+export type Pedido = {
+    createdDate?: number,
     valor: number,
+    userId: string,
 }
 
 export type Client = {

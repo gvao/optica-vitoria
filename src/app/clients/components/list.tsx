@@ -55,7 +55,6 @@ const List = ({ data }: { data: Client[] }) => {
                         <Link href={`/clients/${client?.id}?tab=pedidos`} className={styles.item} >
                             <div className="info">
                                 <h2>{client?.name}</h2>
-                                {/* <p>{client?.id}</p> */}
                             </div>
 
                             <div
