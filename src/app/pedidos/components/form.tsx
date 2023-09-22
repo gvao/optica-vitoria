@@ -3,6 +3,9 @@
 import { FormComponent, getInputs } from "@/common/form";
 import { usePathname, useRouter } from "next/navigation";
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
+import { addPedidoStore } from "@/store/clients";
+import { Pedido } from "@/store/types";
+
 
 const newPedido = (newData: {}) => fetch('/api/pedidos', {
     method: 'POST',
@@ -12,8 +15,8 @@ const newPedido = (newData: {}) => fetch('/api/pedidos', {
     body: JSON.stringify(newData)
 })
 
-export const FormNewPedido = ({ ...props }) => {
 
+const useForm = () => {
     const [data, setData] = useState({})
     const router = useRouter()
     const pathName = usePathname()
@@ -23,17 +26,41 @@ export const FormNewPedido = ({ ...props }) => {
     const onSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
         const inputs = getInputs(event.target)
 
-        const novoPedido = await newPedido(inputs)
+        const pedido = {
+            ...inputs, userId: 'sbdbd', createdDate: Date.now(),
+        } as Pedido
 
-        console.log( await novoPedido.json())
+        const novoPedido = await newPedido(pedido)
+
+        const storePedido = addPedidoStore(pedido)
+
+        console.log(await storePedido)
         router.back()
     }
+
+    return {
+        data,
+        onSubmit,
+        changeHandle,
+    }
+}
+
+export const FormNewPedido = ({ title = '', ...props }) => {
+
+    const {
+        data,
+        onSubmit,
+        changeHandle,
+    } = useForm()
 
     return (
         <FormComponent.Root onSubmit={onSubmit} {...props} >
 
-            <FormComponent.Input id="name" state={data} onChange={changeHandle} />
-            <FormComponent.Input id="value" type="number" state={data} onChange={changeHandle} />
+            <FormComponent.Title>
+                {title}
+            </FormComponent.Title>
+
+            <FormComponent.Input id="valor" type="number" state={data} onChange={changeHandle} placeholder="Valor do pedido"/>
 
             <FormComponent.Button>Enviar</FormComponent.Button>
         </FormComponent.Root>

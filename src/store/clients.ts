@@ -3,6 +3,7 @@ import { persist } from "zustand/middleware"
 
 import { Client, ClientsStoreProps } from "./types"
 import { generateToken } from "@/utils/number"
+import { Pedido } from "./types"
 
 const clientsStore = create(
     persist<ClientsStoreProps>(
@@ -19,7 +20,9 @@ clientsStore.subscribe((state, prev) => {
     console.log(`Prev state: `, prev, `\n State: `, state)
 })
 
-const { setState } = clientsStore
+const { setState, getState } = clientsStore
+
+export const getPedidos = () => getState().pedidos
 
 export const useClientsStore = (fn = (state: ClientsStoreProps) => state) => clientsStore(fn)
 
@@ -55,3 +58,9 @@ export const removeClientInStore = (clientId: string) =>
 
 export const setSearch = (newValue: string) =>
     setState(state => ({ ...state, search: newValue }))
+
+export const addPedidoStore = (newPedido: Pedido) => {
+    const { pedidos } = clientsStore.getState()
+    
+    console.log(pedidos.push(newPedido))
+}
